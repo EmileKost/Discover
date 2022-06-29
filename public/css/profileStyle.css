@@ -161,6 +161,14 @@ section ul{
 }
 
 
+#geenVacature{
+    padding-top: 5px;
+}
+
+div#test{
+    padding-top: 10px;
+}
+
 /* Media query */
 @media only screen and (max-width: 848px){
     section{
@@ -216,7 +224,7 @@ section ul{
     }
 }
 
-#geen-resultaat {
+/* #geen-resultaat {
     margin-top: 4%;
     text-align: center;
-}
+} */

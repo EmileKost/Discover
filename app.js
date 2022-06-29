@@ -3,6 +3,8 @@ if(process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
+const dotenv = require('dotenv').config()
+
 const express = require('express');
 const bodyParser = require('body-parser'); 
 const app = express();
@@ -13,7 +15,7 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 const path = require('path');
 
-const port = process.env.PORT || 4200;
+const port = process.env.PORT || 3500;
 
 //CONNECTION TO MONGODB DATABASE  
 const mongoose = require('mongoose');
@@ -183,9 +185,19 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 
-// FIXEN!!!!
+//Make the points global variables
+
 app.get('/profile', checkAuthenticated, (req, res, next) => {
   const user = req.user.id;
+  
+  // Blog.findById(user)
+  // .then(results => {
+  //   console.log('TESTTTTT' + results)
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // })
+
   Blog.findById(user).then(results => {
 
     const allResults = results.favorites.map(element => {
@@ -193,16 +205,14 @@ app.get('/profile', checkAuthenticated, (req, res, next) => {
     });
 
     Promise.all(allResults).then(data => {
-      // console.log(allResults)
       res.render('profile', {
         data: data,
-        name: req.user.name
+        name: req.user.name,
       })
     })
-    
   })
   .catch((err) => {
-    // console.log(err);
+    console.log(err);
   })
 })
 
@@ -346,26 +356,50 @@ app.post('/disc', checkAuthenticated, (req, res) => {
       Offers.find({score: "dominant"})
       .then((dombo) => {
         console.log(dombo)
-        res.render('results', {data: dombo})
+        res.render('results', {
+          data: dombo,
+          dpoints: dpoints,
+          ipoints: ipoints,
+          spoints: spoints,
+          cpoints: cpoints,
+        })
       })
     }
       else if(ipoints > dpoints ||  ipoints > spoints || ipoints > cpoints) {
         Offers.find({score: "interactief"})
         .then(dombo => {
           console.log(dombo)
-          res.render('results', {data: dombo})
+          res.render('results', {
+            data: dombo,
+            dpoints: dpoints,
+            ipoints: ipoints,
+            spoints: spoints,
+            cpoints: cpoints,
+          })
         })
         } else if(spoints > dpoints ||  ipoints > spoints || cpoints > cpoints){
           Offers.find({score: "stabiel"})
           .then(dombo => {
             console.log(dombo)
-            res.render('results', {data: dombo})
+            res.render('results', {
+              data: dombo,
+              dpoints: dpoints,
+              ipoints: ipoints,
+              spoints: spoints,
+              cpoints: cpoints,
+            })
           })
         } else if(cpoints > dpoints ||  ipoints > spoints || spoints > cpoints) {
             Offers.find({score: "conscientieus"})
             .then(dombo => {
               console.log(dombo)
-              res.render('results', {data: dombo})
+              res.render('results', {
+                data: dombo,
+                dpoints: dpoints,
+                ipoints: ipoints,
+                spoints: spoints,
+                cpoints: cpoints,
+              })
             })
   }
 

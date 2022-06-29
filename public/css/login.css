@@ -9,7 +9,7 @@ body{
 }
 
 main{
-    width: 40vw;
+    width: 320px;
     margin: 0 auto;
 }
 
@@ -97,8 +97,4 @@ label{
     main{
         width: 55vw;
     }
-}
-
-#welkom {
-    margin-top: 15px;
 }
