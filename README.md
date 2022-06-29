@@ -1,5 +1,9 @@
 # Readme Discover
 
+# Design rationale
+
+https://github.com/EmileKost/Discover/blob/main/designrationaleMP.pdf
+
 ## Introductie
 Discover is een webapplicatie voor een vacaturebank speciaal ontwikkeld voor de bio technische sector. Op discover kan een 
 gebruiker een DISC persoonlijkheids test invullen om te kijken welke kernwaarden en eigenschappen bij hem passen. Op basis
