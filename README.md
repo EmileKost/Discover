@@ -1,6 +1,7 @@
 # Readme Discover
 
 # Design rationale
+De design rationale is een PDF bestand in de files van deze repository. (designrationaleMP.pdf) Het is het beste te bekijken als je de file download en dan bekijkt. Wanneer je deze filemop github opent is hij uitvergroot. 
 
 https://github.com/EmileKost/Discover/blob/main/designrationaleMP.pdf
 
