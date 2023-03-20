@@ -5,6 +5,14 @@ De design rationale is een PDF bestand in de files van deze repository. (designr
 
 https://github.com/EmileKost/Discover/blob/main/designrationaleMP.pdf
 
+## Clone dit project
+````
+git clone https://github.com/EmileKost/Discover
+````
+- Open project
+- NPM Install
+- NPM start
+
 ## Introductie
 Discover is een webapplicatie voor een vacaturebank speciaal ontwikkeld voor de bio technische sector. Op discover kan een 
 gebruiker een DISC persoonlijkheids test invullen om te kijken welke kernwaarden en eigenschappen bij hem passen. Op basis
